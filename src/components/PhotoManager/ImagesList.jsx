@@ -1,12 +1,32 @@
 import PropTypes from "prop-types";
+import ClearIcon from "@mui/icons-material/Clear";
 
 const ImagesList = ({ files, onDeleteFile }) => {
+  const selectImage = (e, fileId) => {
+    onDeleteFile(fileId);
+  };
+
   const imgs = files.map((file) => {
     const { id, src, name } = file;
-    return <img className="img" key={id} src={src} alt={name} />;
+    return (
+      <div className="image-wrapper" key={id}>
+        <img className="img" src={src} alt={name} />
+        <button
+          className="delete-btn"
+          aria-label="delete image"
+          onClick={(e) => selectImage(e, id)}
+        >
+          <ClearIcon />
+        </button>
+      </div>
+    );
   });
 
-  return <div className="images-wrapper">{imgs}</div>;
+  const imagesWrapper = imgs.length ? (
+    <div className="images-wrapper">{imgs}</div>
+  ) : null;
+
+  return <>{imagesWrapper}</>;
 };
 
 ImagesList.propTypes = {

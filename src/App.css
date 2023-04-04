@@ -7,7 +7,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 5rem;
   height: 100vh;
 }
 
@@ -33,11 +33,27 @@
 
 .images-wrapper {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-wrapper {
+  position: relative;
 }
 
 .img {
   width: 200px;
   aspect-ratio: 1;
   object-fit: cover;
+}
+
+.delete-btn {
+  width: 40px;
+  aspect-ratio: 1;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  top: -20px;
+  right: -20px;
 }

@@ -20,11 +20,13 @@ const PhotoManager = () => {
         id: nanoid(),
       });
     }
-
     setFileUrls([...files, ...urls]);
   };
 
-  const deleteFile = (fileId) => {};
+  const deleteFile = (fileId) => {
+    const newFiles = files.filter((file) => file.id !== fileId);
+    setFileUrls(newFiles);
+  };
 
   return (
     <div className="wrapper">
