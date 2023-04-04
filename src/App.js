@@ -1,7 +1,8 @@
+import PhotoManager from "./components/PhotoManager";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  return <PhotoManager />;
 }
 
 export default App;
